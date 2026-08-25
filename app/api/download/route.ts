@@ -75,6 +75,9 @@ export async function POST(req: NextRequest) {
     }
 
     const data: RapidApiResponse = await apiResponse.json();
+
+    // TEMPORARY DEBUG LINE — remove once we've seen the real shape
+
     const medias = Array.isArray(data.medias) ? data.medias : [];
 
     if (medias.length === 0 && !data.url) {
